@@ -1,4 +1,5 @@
-const i3 = {
+const CPU = {
+i3: {
     i3_530: 73,
     i3_540: 73,
     i3_550: 73,
@@ -11,11 +12,12 @@ const i3 = {
     i3_2120: 65,
     i3_2100T: 35,
     i3_2120T: 35,
+}
 };
 
 const pcCompetitive = {
     tdpCooller: 100,
-    tdpCPU: i3.i3_530
+    tdpCPU: CPU.i3.i3_530
 }
 
 const competitive = ({tdpCooller, tdpCPU}) => {
