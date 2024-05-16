@@ -1,0 +1,32 @@
+const i3 = {
+    i3_530: 73,
+    i3_540: 73,
+    i3_550: 73,
+    i3_560: 73,
+    i3_2100: 65,
+    i3_2102: 65,
+    i3_2105: 65,
+    i3_2125: 65,
+    i3_2130: 65,
+    i3_2120: 65,
+    i3_2100T: 35,
+    i3_2120T: 35,
+};
+
+const pcCompetitive = {
+    tdpCooller: 100,
+    tdpCPU: i3.i3_530
+}
+
+const competitive = ({tdpCooller, tdpCPU}) => {
+if (tdpCPU > tdpCooller) {
+    return `Данная система охлаждения не подойдёт на выбранный процессор, потому что TBP процессора-${tdpCPU}W больше, чем максимальное теплорассеивание TDP системы охлаждения-${tdpCooller}W`
+}
+if (tdpCPU < tdpCooller) {
+    return `Система охлаждения подходит по параметрам рассеевания TDP к выбранному процессору, максимальное теплорассеевание TDP системой охлаждения-${tdpCooller}W, TDP выделяемое процессором-${tdpCPU}W`
+}
+}
+
+const a = competitive(pcCompetitive)
+
+console.log(a)
