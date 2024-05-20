@@ -1,34 +1,39 @@
-const CPU_TDP_W = {
-i3: {
-    i3_530: 73,
-    i3_540: 73,
-    i3_550: 73,
-    i3_560: 73,
-    i3_2100: 65,
-    i3_2102: 65,
-    i3_2105: 65,
-    i3_2125: 65,
-    i3_2130: 65,
-    i3_2120: 65,
-    i3_2100T: 35,
-    i3_2120T: 35,
+const cpUTdpW = {
+    i3: {
+        i3_530: 73,
+        i3_540: 73,
+        i3_550: 73,
+        i3_560: 73,
+        i3_2100: 65,
+        i3_2102: 65,
+        i3_2105: 65,
+        i3_2125: 65,
+        i3_2130: 65,
+        i3_2120: 65,
+        i3_2100T: 35,
+        i3_2120T: 35,
+    }
+    };
+const collerTdpW = {
+    lianLi: {
+        GalahadAIOUniFanSLEdition360: 350,
+        GalahadAIO360: 300
+    }
 }
-};
-
-const pcCompetitive = {
-    tdpCooller: 100,
-    tdpCPU: CPU_TDP_W.i3.i3_530
-}
-
-const competitive = ({tdpCooller, tdpCPU}) => {
-if (tdpCPU > tdpCooller) {
-    return `Данная система охлаждения не подойдёт на выбранный процессор, потому что TDP процессора-${tdpCPU}W больше, чем максимальное теплорассеивание TDP системы охлаждения-${tdpCooller}W`
-}
-if (tdpCPU < tdpCooller) {
-    return `Система охлаждения подходит по параметрам теплорассеевания TDP к выбранному процессору, максимальное теплорассеевание TDP системой охлаждения-${tdpCooller}W, TDP выделяемое процессором-${tdpCPU}W`
-}
-}
-
-const a = competitive(pcCompetitive)
-
-console.log(a)
+    const pcCompetitive = {
+        tdpCooller: collerTdpW.lianLi.GalahadAIO360,
+        tdpCPU: cpUTdpW.i3.i3_530
+    }
+    
+    const competitive = ({tdpCooller, tdpCPU}) => {
+    if (tdpCPU > tdpCooller) {
+        return `Данная система охлаждения не подойдёт на выбранный процессор, потому что TDP процессора-${tdpCPU}W больше, чем максимальное теплорассеивание TDP системы охлаждения-${tdpCooller}W`
+    }
+    if (tdpCPU < tdpCooller) {
+        return `Система охлаждения подходит по параметрам теплорассеевания TDP к выбранному процессору, максимальное теплорассеевание TDP системой охлаждения-${tdpCooller}W, TDP выделяемое процессором-${tdpCPU}W`
+    }
+    }
+    
+    const a = competitive(pcCompetitive)
+    
+    console.log(a)
